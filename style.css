@@ -1,0 +1,145 @@
+/* ===== Animated Background ===== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background: #0b3d2e;
+    overflow-x: hidden;
+}
+
+/* White floating dots */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background-image:
+        radial-gradient(white 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.25;
+    animation: floatDots 60s linear infinite;
+    pointer-events: none;
+}
+
+body::after {
+    background-size: 70px 70px;
+    opacity: 0.15;
+    animation-duration: 90s;
+}
+
+@keyframes floatDots {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(-200px, -200px);
+    }
+}
+
+/* ===== Main Card ===== */
+.container {
+    max-width: 500px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    color: #1b5e20;
+}
+
+/* ===== Tabs ===== */
+.tabs button {
+    margin: 6px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 12px;
+    background: #2e7d32;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.tabs button:hover {
+    background: #1b5e20;
+    transform: translateY(-2px);
+}
+
+/* ===== Content ===== */
+.tab-content {
+    display: none;
+    margin-top: 20px;
+}
+
+.tab-content p {
+    font-size: 16px;
+    color: #333;
+}
+
+/* ===== Surprise Button ===== */
+.surprise-btn {
+    padding: 15px 22px;
+    background: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.surprise-btn:hover {
+    background: #1b5e20;
+    transform: scale(1.05);
+}
+
+/* ===== Hidden Surprise ===== */
+#hiddenMessage {
+    display: none;
+    margin-top: 20px;
+}
+
+#hiddenMessage img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+/* Fade + slide up animation for tab content */
+.tab-content {
+    display: none;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Active content will animate in */
+.tab-content.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Optional: small bounce on headers or emojis */
+.tab-content h1, .tab-content p {
+    transition: transform 0.4s ease;
+}
+
+.tab-content.active h1, .tab-content.active p {
+    animation: bounceText 0.8s ease;
+}
+
+@keyframes bounceText {
+    0%   { transform: translateY(-10px); }
+    50%  { transform: translateY(3px); }
+    100% { transform: translateY(0); }
+}

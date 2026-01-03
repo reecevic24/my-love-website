@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For You ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Hey My Love 💕</h1>
+
+    <div class="tabs">
+        <button onclick="showTab('home')">Home</button>
+        <button onclick="showTab('song')">Listen to this Song🎵</button>
+        <button onclick="showTab('surprise')">Press to See 💝</button>
+        <button onclick="showTab('note')">Final Note 💌</button>
+    </div>
+
+    <div id="home" class="tab-content">
+        <p>
+            I made this little website just for you.
+            Every part of it carries a piece of my heart ❤️
+        </p>
+    </div>
+
+    <div id="song" class="tab-content">
+        <p>This song reminds me of you 🥰</p>
+        <audio controls>
+            <source src="song.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>    
+</div>
+
+    <div id="surprise" class="tab-content">
+        <button class="surprise-btn" onclick="showSurprise()">
+            Click Me 😘
+        </button>
+        <div id="hiddenMessage">
+            <img src="images/her-photo.jpg" alt="Her photo">
+            <p>
+                You are my safe place, my happiness, my everything ❤️
+            </p>
+        </div>
+    </div>
+
+    <div id="note" class="tab-content">
+        <p>
+            No matter where life takes us,  
+            just know that you are deeply loved 💕
+        </p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
